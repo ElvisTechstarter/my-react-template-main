@@ -1,4 +1,4 @@
-import { TodosQueries } from "../../api/v1/todos";
+import { TodosMutations, TodosQueries } from "../../api/v1/todos";
 import ToDoItem from "../../components/common/templates/todo-item";
 import styles from "./ToDoPage.module.css";
 import { useState, useEffect } from "react";
@@ -43,6 +43,12 @@ function ToDoPage() {
   // useEffect
   useEffect(() => {
     fetchTodos();
+
+    TodosQueries.fetchTodoById(2);
+    TodosQueries.fetchTodoByUserId(1);
+    TodosMutations.markTodo();
+    TodosMutations.updateTodo();
+    TodosMutations.deleteTodo(3);
   }, []);
 
   //###Ergänzung zum Code vom Unterricht:###
