@@ -10,4 +10,34 @@ async function createTodo(newTodo) {
   return todos;
 }
 
-export default { createTodo };
+async function markTodo(newTodo) {
+  const result = api.put("/todos/mark", {
+    newTodo: newTodo,
+  });
+
+  const todos = result.data;
+
+  return todos;
+}
+
+async function updateTodo(newTodo) {
+  const result = api.put("/todos/update", {
+    newTodo: newTodo,
+  });
+
+  const todos = result.data;
+
+  return todos;
+}
+
+async function deleteTodo(newTodo) {
+  const result = api.delete("/todos/delete", {
+    newTodo: newTodo,
+  });
+
+  const todos = result.data;
+
+  return todos;
+}
+
+export default { createTodo, markTodo, updateTodo, deleteTodo };
