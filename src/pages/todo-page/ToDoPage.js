@@ -46,9 +46,9 @@ function ToDoPage() {
 
     TodosQueries.fetchTodoById(2);
     TodosQueries.fetchTodoByUserId(1);
-    TodosMutations.markTodo();
-    TodosMutations.updateTodo();
-    TodosMutations.deleteTodo(3);
+    // TodosMutations.markTodo();
+    // TodosMutations.updateTodo();
+    // TodosMutations.deleteTodo(3);
   }, []);
 
   //###Ergänzung zum Code vom Unterricht:###

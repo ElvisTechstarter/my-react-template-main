@@ -10,10 +10,8 @@ async function createTodo(newTodo) {
   return todos;
 }
 
-async function markTodo(newTodo) {
-  const result = api.put("/todos/mark", {
-    newTodo: newTodo,
-  });
+async function markTodo(id, isDone) {
+  const result = api.put("/todos/mark", { id, isDone });
 
   const todos = result.data;
 
